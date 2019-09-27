@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Hangman Game
+# Hangman Game https://en.wikipedia.org/wiki/Hangman_(game)
 # Object-Oriented Programming
 
 # Import
