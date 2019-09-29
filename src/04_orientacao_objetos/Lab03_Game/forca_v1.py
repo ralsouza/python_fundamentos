@@ -99,3 +99,21 @@ def main():
     # Object
     game = Hangman(rand_word())
 
+    # While the game is not over, print the status, request a letter and read caracter
+
+    # Check the status game
+    game.print_game_status()
+
+    # According to the game status, print the message on screen to user
+    if game.hangman_won():
+        print('\nCongratulations! You won!!!')
+    else:
+        print('\nGame over! You lost.')
+        print('The word was {}'.format(game.word))
+
+    print('\nIt was good to play with you. But now go study!\n')
+
+# Run program
+if __name__ == '__main__':
+    main()
+
