@@ -72,6 +72,7 @@ class Hangman:
 
     # Contructor
     def __init__(self, word):
+        self.word = word
 
     # Method to guess the letter
     def guess(self, letter):
