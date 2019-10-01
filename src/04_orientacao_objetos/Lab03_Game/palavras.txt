@@ -1,3 +1,10 @@
-bola
 casa
-massa
+bola
+cadeira
+carro
+caminhao
+gato
+cachorro
+elefante
+mesa
+teste
