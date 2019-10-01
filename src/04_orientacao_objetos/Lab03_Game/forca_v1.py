@@ -88,28 +88,25 @@ class Hangman:
     # def hide_word(self):
 
     # Method to check the status game and print the board on the screen
-    # def print_game_status(self):
-      #  print(board[0])
-
+    def print_game_status(self):
+     print(board[0])
 
 # Function to read a word randomly from the word bank
 def rand_word():
     with open('palavras.txt', 'rt') as f:
         bank = f.readlines()
-    return bank[random.randint(0, len(bank))].strip()
+    return bank[random.randint(0, bank.index(max(bank)))].strip()
 
 
 # Main function
 def main():
     # Object
-    game = Hangman( rand_word() )
-    print(rand_word())
-
+    game = Hangman(rand_word())
 
     # While the game is not over, print the status, request a letter and read caracter
 
     # Check the status game
-    #game.print_game_status()
+    game.print_game_status()
 
     # According to the game status, print the message on screen to user
     # if game.hangman_won():
