@@ -104,6 +104,7 @@ def main():
     # Object
     game = Hangman( rand_word() )
     print(rand_word())
+
     # While the game is not over, print the status, request a letter and read caracter
 
     # Check the status game
