@@ -10,6 +10,7 @@ import random
 board = [''' 
 
 >>>>>>>>>>>>>>>>>> HANGMAN >>>>>>>>>>>>>>>>>>
+https://en.wikipedia.org/wiki/Hangman_(game)
 
  +---+
  |   |
@@ -69,6 +70,7 @@ board = ['''
 
 wrongLetters = []
 correctLetters = []
+hidedWord = []
 
 # Class
 class Hangman:
@@ -81,11 +83,8 @@ class Hangman:
     def guess(self, letter):
         if letter in self.word:
             correctLetters.append(letter)
-            print('Possui a letra')
         else:
             wrongLetters.append(letter)
-            print('Não possui uma letra na palavra')
-
 
     # Method to check if game is over
     # def hangman_over(self):
