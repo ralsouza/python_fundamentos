@@ -67,6 +67,8 @@ board = ['''
      |
 =========''']
 
+wrongLetters = []
+correctLetters = []
 
 # Class
 class Hangman:
@@ -78,9 +80,12 @@ class Hangman:
     # Method to guess the letter
     def guess(self, letter):
         if letter in self.word:
+            correctLetters.append(letter)
             print('Possui a letra')
         else:
+            wrongLetters.append(letter)
             print('Não possui uma letra na palavra')
+
 
     # Method to check if game is over
     # def hangman_over(self):
@@ -96,10 +101,9 @@ class Hangman:
     # Method to check the status game and print the board on the screen
     def print_game_status(self):
      print(board[0])
-     print('')
-     print('Word: ' + self.hide_word())
-     print('Wrong letters: ')
-     print('Correct letters: ')
+     print('\nWord: ' + self.hide_word())
+     print('Wrong letters: ' + ', '.join(wrongLetters))
+     print('Correct letters: ' + ', '.join(correctLetters))
 
 # Function to read a word randomly from the word bank
 def rand_word():
