@@ -76,7 +76,11 @@ class Hangman:
         self.word = word
 
     # Method to guess the letter
-    # def guess(self, letter):
+    def guess(self, letter):
+        if letter in self.word:
+            print('Possui a letra')
+        else:
+            print('Não possui uma letra na palavra')
 
     # Method to check if game is over
     # def hangman_over(self):
@@ -85,11 +89,17 @@ class Hangman:
     # def hangman_won(self):
 
     # Method to hide the letter on the board
-    # def hide_word(self):
+    def hide_word(self):
+        hidedWord = '*' * len(self.word)
+        return hidedWord
 
     # Method to check the status game and print the board on the screen
     def print_game_status(self):
      print(board[0])
+     print('')
+     print('Word: ' + self.hide_word())
+     print('Wrong letters: ')
+     print('Correct letters: ')
 
 # Function to read a word randomly from the word bank
 def rand_word():
@@ -97,16 +107,19 @@ def rand_word():
         bank = f.readlines()
     return bank[random.randint(0, bank.index(max(bank)))].strip()
 
-
 # Main function
 def main():
     # Object
     game = Hangman(rand_word())
 
     # While the game is not over, print the status, request a letter and read caracter
+    while(exit != True):
+        # Check the status game
+        game.print_game_status()
 
-    # Check the status game
-    game.print_game_status()
+        # Input from user
+        inputUser = input('Type a letter: ')
+        game.guess(inputUser)
 
     # According to the game status, print the message on screen to user
     # if game.hangman_won():
