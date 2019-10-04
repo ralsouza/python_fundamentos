@@ -94,13 +94,13 @@ class Hangman:
 
     # Method to hide the letter on the board
     def hide_word(self):
-        hidedWord.append('*' * len(self.word))
+        hidedWord = ['*' for x in self.word]
         return hidedWord
 
     # Method to check the status game and print the board on the screen
     def print_game_status(self):
      print(board[0])
-     print('Word: ' + ' '.join(hidedWord))
+     print('Word: ' + ''.join(hidedWord))
      print('Wrong letters: ' + ', '.join(wrongLetters))
      print('Correct letters: ' + ', '.join(correctLetters))
 
@@ -116,7 +116,6 @@ def rand_word():
 def main():
     # Object
     game = Hangman(rand_word())
-    hidedWord = game.hide_word()
 
     # While the game is not over, print the status, request a letter and read caracter
     while(exit != True):
