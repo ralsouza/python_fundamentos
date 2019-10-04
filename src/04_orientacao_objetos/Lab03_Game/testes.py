@@ -1,10 +1,9 @@
 
-list = []
 
-word = 'test'
+def hide_word():
+    hidedWord = '*' * len(word)
+    return hidedWord
 
-list = ['*' for word in word]
+word = 'teste'
 
-print(*list)
-
-list.append()
+print(hide_word())
