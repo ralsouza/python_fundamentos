@@ -1,9 +1,20 @@
 
+hidedWord = []
+word = 'Teste'
+letter = 'e'
 
-def hide_word():
-    hidedWord = '*' * len(word)
+def hide_word(word):
+    hidedWord.append('*' * len(word))
     return hidedWord
 
-word = 'teste'
+hide_word(word)
 
-print(hide_word())
+print('Word: ' + ''.join(hidedWord))
+
+hidedWord[2]
+
+
+
+
+# if letter in word:
+#     print()
