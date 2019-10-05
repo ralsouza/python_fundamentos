@@ -85,7 +85,8 @@ class Hangman:
     def guess(self, letter):
         if letter in self.word:
             correctLetters.append(letter)
-            self.hidedWord[1] = 'Y'
+
+            self.hidedWord[1] = letter # <-- Replace this
         else:
             wrongLetters.append(letter)
 
