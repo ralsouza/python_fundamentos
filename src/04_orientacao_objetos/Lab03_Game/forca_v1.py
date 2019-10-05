@@ -68,6 +68,7 @@ https://en.wikipedia.org/wiki/Hangman_(game)
      |
 =========''']
 
+# Create lists to store data
 wrongLetters = []
 correctLetters = []
 hidedWord = []
@@ -94,13 +95,12 @@ class Hangman:
 
     # Method to hide the letter on the board
     def hide_word(self):
-        hidedWord = ['*' for x in self.word]
-        return hidedWord
+        return ['*' for x in self.word]
 
     # Method to check the status game and print the board on the screen
     def print_game_status(self):
      print(board[0])
-     print('Word: ' + ''.join(hidedWord))
+     print(hidedWord)
      print('Wrong letters: ' + ', '.join(wrongLetters))
      print('Correct letters: ' + ', '.join(correctLetters))
 
@@ -109,8 +109,6 @@ def rand_word():
     with open('palavras.txt', 'rt') as f:
         bank = f.readlines()
     return bank[random.randint(0, bank.index(max(bank)))].strip()
-
-
 
 # Main function
 def main():
