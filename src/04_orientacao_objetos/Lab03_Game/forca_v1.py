@@ -79,11 +79,13 @@ class Hangman:
     # Constructor
     def __init__(self, word):
         self.word = word
+        self.hidedWord = self.hide_word()
 
     # Method to guess the letter
     def guess(self, letter):
         if letter in self.word:
             correctLetters.append(letter)
+            self.hidedWord[1] = 'Y'
         else:
             wrongLetters.append(letter)
 
@@ -100,7 +102,7 @@ class Hangman:
     # Method to check the status game and print the board on the screen
     def print_game_status(self):
      print(board[0])
-     print(hidedWord)
+     print(*self.hidedWord)
      print('Wrong letters: ' + ', '.join(wrongLetters))
      print('Correct letters: ' + ', '.join(correctLetters))
 
