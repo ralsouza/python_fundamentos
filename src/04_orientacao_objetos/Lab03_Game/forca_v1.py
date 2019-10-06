@@ -86,10 +86,10 @@ class Hangman:
         if letter in self.word:
             # Append guessed letter into correct letters list
             correctLetters.append(letter)
-            # Extract index of position guessed letter
-            # idxLetter =
+            # Extract the index or indexes of position/s guessed letter
+            idx = [idx for idx, v in enumerate(self.word) if v == letter]
             # Replace guessed letter into the correspondent position in the hidden word
-            self.hiddenWord[1] = letter # <-- Replace this
+            self.hiddenWord[idx] = letter # <-- Replace this
         else:
             wrongLetters.append(letter)
 
