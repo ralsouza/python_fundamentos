@@ -1,21 +1,12 @@
 
-hidedWord = []
-word = 'Teste'
-letter = 'e'
 
-def hide_word():
-    hidedWord = ['*' for x in word]
-    return hidedWord
+word = 'casa'
 
-hidedWord = hide_word()
+print(list(enumerate(word)))
 
-print('Word: ' + ''.join(hidedWord))
+# idx = [i for i, value in enumerate(word) if value == 'a']
 
-hidedWord[2] = 'b'
-hidedWord[3] = 'c'
+idx = [value for value, word in enumerate(word) ]
 
-print('Word: ' + ''.join(hidedWord))
+print(idx)
 
-
-# if letter in word:
-#     print()

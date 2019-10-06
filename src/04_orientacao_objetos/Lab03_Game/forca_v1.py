@@ -71,7 +71,7 @@ https://en.wikipedia.org/wiki/Hangman_(game)
 # Create lists to store data
 wrongLetters = []
 correctLetters = []
-hidedWord = []
+hiddenWord = []
 
 # Class
 class Hangman:
@@ -79,14 +79,17 @@ class Hangman:
     # Constructor
     def __init__(self, word):
         self.word = word
-        self.hidedWord = self.hide_word()
+        self.hiddenWord = self.hide_word()
 
     # Method to guess the letter
     def guess(self, letter):
         if letter in self.word:
+            # Append guessed letter into correct letters list
             correctLetters.append(letter)
-
-            self.hidedWord[1] = letter # <-- Replace this
+            # Extract index of position guessed letter
+            # idxLetter =
+            # Replace guessed letter into the correspondent position in the hidden word
+            self.hiddenWord[1] = letter # <-- Replace this
         else:
             wrongLetters.append(letter)
 
@@ -103,7 +106,7 @@ class Hangman:
     # Method to check the status game and print the board on the screen
     def print_game_status(self):
      print(board[0])
-     print(*self.hidedWord)
+     print(*self.hiddenWord)
      print('Wrong letters: ' + ', '.join(wrongLetters))
      print('Correct letters: ' + ', '.join(correctLetters))
 
