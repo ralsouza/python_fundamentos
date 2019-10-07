@@ -89,7 +89,7 @@ class Hangman:
             # Extract the index or indexes of position/s guessed letter
             idx = [idx for idx, v in enumerate(self.word) if v == letter]
             # Replace guessed letter into the correspondent position in the hidden word
-            self.hiddenWord[idx] = letter # <-- Replace this
+            self.hiddenWord[idx] = letter # <-- Create a for to replace all occurrences????
         else:
             wrongLetters.append(letter)
 
