@@ -5,7 +5,7 @@
 
 # Import
 import random
-
+import sys
 # Board
 board = [''' 
 
@@ -87,6 +87,9 @@ class Hangman:
             # Append guessed letter into correct letters list
             correctLetters.append(letter)
 
+            if(len(correctLetters) == len(self.word)):
+                self.hangman_won()
+
             # Extract the index or indexes of position/s guessed letter
             idx = [idx for idx, v in enumerate(self.word) if v == letter]
 
@@ -96,14 +99,18 @@ class Hangman:
                 print(self.word)
         else:
             wrongLetters.append(letter)
-            return board
+
+            # Check if gamer lost
+            if(len(wrongLetters) == len(self.word)):
+                self.hangman_over()
 
     # Method to check if game is over
-    #def hangman_over(self):
-
+    def hangman_over(self):
+        sys.exit('\nGAME OVER! \nThe word was: {} \nTry again.'.format(self.word))
 
     # Method to check if the player won
-    # def hangman_won(self):
+    def hangman_won(self):
+        sys.exit('\nYOU WON! \nNow, go to study!!!')
 
     # Method to hide the letter on the board
     def hide_word(self):
