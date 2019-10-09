@@ -89,12 +89,17 @@ class Hangman:
             # Extract the index or indexes of position/s guessed letter
             idx = [idx for idx, v in enumerate(self.word) if v == letter]
             # Replace guessed letter into the correspondent position in the hidden word
-            self.hiddenWord[idx] = letter # <-- Create a for to replace all occurrences????
+            for i in range(len(idx)):
+                self.hiddenWord[idx[i]] = letter
+                print(self.word)
         else:
             wrongLetters.append(letter)
+            return board
+
 
     # Method to check if game is over
-    # def hangman_over(self):
+    #def hangman_over(self):
+
 
     # Method to check if the player won
     # def hangman_won(self):

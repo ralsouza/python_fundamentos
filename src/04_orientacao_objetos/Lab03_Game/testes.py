@@ -1,7 +1,7 @@
 
 hidden = ['*','*','*','*']
 word = 'casa'
-letter = 'c'
+letter = 'a'
 
 print(list(enumerate(word)))
 
@@ -11,10 +11,12 @@ print(idx2)
 
 print(*hidden)
 
-for i in range(0,1):
+for i in range(len(idx2)):
     hidden[idx2[i]] = letter
 
 print(*hidden)
+
+print(word[0])
 
 
 

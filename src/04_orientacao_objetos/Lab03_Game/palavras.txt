@@ -1,10 +1,10 @@
 casa
-bola
-cadeira
-carro
 caminhao
-gato
-cachorro
-elefante
-mesa
+pessoa
+bola
 teste
+python
+cadeira
+mesa
+carro
+gato
