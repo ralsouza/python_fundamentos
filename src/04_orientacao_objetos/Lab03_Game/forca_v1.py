@@ -87,7 +87,7 @@ class Hangman:
             # Append guessed letter into correct letters list
             correctLetters.append(letter)
 
-            if(len(correctLetters) == len(self.word)):
+            if (len(correctLetters) == len(self.word)):
                 self.hangman_won()
 
             # Extract the index or indexes of position/s guessed letter
@@ -149,16 +149,6 @@ def main():
         # Input from user
         inputUser = input('Type a letter: ')
         game.guess(inputUser)
-
-    # According to the game status, print the message on screen to user
-    # if game.hangman_won():
-    #  print('\nCongratulations! You won!!!')
-    # else:
-    # print('\nGame over! You lost.')
-    # print('The word was {}'.format(game.word))
-
-    # print('\nIt was good to play with you. But now go study!\n')
-
 
 # Run program
 if __name__ == '__main__':
