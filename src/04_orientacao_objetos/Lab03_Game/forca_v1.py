@@ -86,8 +86,10 @@ class Hangman:
         if letter in self.word:
             # Append guessed letter into correct letters list
             correctLetters.append(letter)
+
             # Extract the index or indexes of position/s guessed letter
             idx = [idx for idx, v in enumerate(self.word) if v == letter]
+
             # Replace guessed letter into the correspondent position in the hidden word
             for i in range(len(idx)):
                 self.hiddenWord[idx[i]] = letter
@@ -95,7 +97,6 @@ class Hangman:
         else:
             wrongLetters.append(letter)
             return board
-
 
     # Method to check if game is over
     #def hangman_over(self):
@@ -110,9 +111,16 @@ class Hangman:
 
     # Method to check the status game and print the board on the screen
     def print_game_status(self):
-     print(board[0])
+     # Draws the hangman on the board
+     print(board[len(wrongLetters)])
+
+     # Print the hidden word on the board
      print(*self.hiddenWord)
+
+     # Print the wrong letters on the board
      print('Wrong letters: ' + ', '.join(wrongLetters))
+
+     # Print the correct letters on the board
      print('Correct letters: ' + ', '.join(correctLetters))
 
 # Function to read a word randomly from the word bank
